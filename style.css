@@ -1,0 +1,259 @@
+/* =========================================
+   FONTS & GLOBAL RESET
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom property for Infinite Border Rotation */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #030406;
+    color: #ffffff;
+    overflow: hidden; 
+    position: relative;
+}
+
+/* =========================================
+   BACKGROUND EFFECTS (Grid & Particles)
+========================================= */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    /* Static dots: 2.5px size for clarity */
+    background-image: radial-gradient(rgba(8, 251, 143, 0.25) 2.5px, transparent 1px);
+    background-size: 50px 50px; 
+    z-index: -2;
+}
+
+#tsparticles {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; left: 0;
+    z-index: -2; /* Background layer */
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: -20%; left: -10%;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(8, 251, 143, 0.15) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: -1;
+    animation: pulseGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    to { transform: scale(1.2) translate(5%, 5%); opacity: 1; }
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+header {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%;
+    background: rgba(3, 4, 6, 0.6);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(8, 251, 143, 0.15);
+    z-index: 100;
+}
+
+header h2 { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    color: #fff; 
+    letter-spacing: -0.5px;
+}
+
+nav { display: flex; gap: 15px; overflow-x: auto; scrollbar-width: none; }
+nav::-webkit-scrollbar { display: none; }
+
+nav a {
+    text-decoration: none; color: #8892b0;
+    font-size: 0.95rem; font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav a.active {
+    color: #08fb8f; font-weight: 700;
+    text-shadow: 0 0 10px rgba(8, 251, 143, 0.5);
+    border-bottom: 2px solid #08fb8f;
+    padding-bottom: 4px;
+}
+
+/* =========================================
+   LAYOUT & SECTIONS
+========================================= */
+.horizontal-container {
+    display: flex; width: 100vw; height: 100vh;
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.section {
+    flex: 0 0 100vw; height: 100vh;
+    scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; justify-content: center; align-items: center;
+    padding: 100px 20px 20px; overflow-y: auto;
+}
+
+.content-box { text-align: center; max-width: 800px; width: 100%; z-index: 10; }
+
+/* =========================================
+   TYPOGRAPHY (HEADINGS COLOR)
+========================================= */
+.hero-title {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-title span { 
+    color: #08fb8f; 
+    text-shadow: 0 0 20px rgba(8, 251, 143, 0.4); 
+}
+
+/* SECTION HEADINGS - THEME COLOR RESTORED */
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 25px;
+    color: #08fb8f; /* Section heading color restored */
+    text-shadow: 0 0 15px rgba(8, 251, 143, 0.3);
+    letter-spacing: -0.5px;
+}
+
+.content-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #a8b2d1;
+    font-size: 1.05rem;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: #ccd6f6;
+    margin-top: 15px;
+}
+
+/* =========================================
+   INFINITE ROTATING BORDER BUTTONS
+========================================= */
+.cta, .cta-outline {
+    position: relative;
+    display: inline-block;
+    margin: 25px 10px 0;
+    padding: 12px 32px;
+    background: rgba(8, 251, 143, 0.05);
+    color: #08fb8f;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 1;
+    border: none;
+}
+
+.cta::before, .cta-outline::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px; bottom: -1px;
+    border-radius: 4px;
+    padding: 2px; 
+    background: conic-gradient(from var(--angle), #08fb8f, transparent, #08fb8f, transparent, #08fb8f);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: rotateBorder 3s linear infinite;
+}
+
+@keyframes rotateBorder {
+    to { --angle: 360deg; }
+}
+
+.cta:hover, .cta-outline:hover {
+    transform: translateY(-4px);
+    background: rgba(8, 251, 143, 0.15);
+    box-shadow: 0 0 20px rgba(8, 251, 143, 0.4);
+    color: #fff;
+}
+
+/* =========================================
+   CARDS & LISTS
+========================================= */
+.cards {
+    display: flex; justify-content: center;
+    gap: 20px; flex-wrap: wrap; margin-top: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(8, 251, 143, 0.2);
+    padding: 35px 25px; border-radius: 12px;
+    width: 270px; transition: 0.3s;
+}
+
+.card:hover { border-color: #08fb8f; transform: translateY(-6px); }
+
+.card h3 { margin-bottom: 12px; color: #e6f1ff; font-size: 1.3rem; }
+
+ul.styled-list {
+    list-style: none; text-align: left;
+    display: inline-block; margin-top: 15px; padding: 0;
+}
+
+ul.styled-list li {
+    margin-bottom: 12px; position: relative;
+    padding-left: 25px; font-size: 0.95rem; color: #a8b2d1;
+}
+
+ul.styled-list li::before {
+    content: '▹'; position: absolute;
+    left: 0; color: #08fb8f; 
+    font-size: 1.2rem; text-shadow: 0 0 5px #08fb8f;
+}
+
+/* =========================================
+   TYPEWRITER UTILS
+========================================= */
+.type-word {
+    opacity: 0;
+    transform: translateY(10px);
+    display: inline-block;
+    will-change: opacity, transform;
+}
+
+/* =========================================
+   FOOTER & SCROLLBAR
+========================================= */
+footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1px; }
+
+::-webkit-scrollbar { height: 6px; width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(8, 251, 143, 0.3); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(8, 251, 143, 0.6); }
+
+@media (max-width: 600px) {
+    header h2 { font-size: 1.1rem; }
+    nav a { font-size: 0.85rem; }
+}
