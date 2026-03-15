@@ -442,6 +442,39 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
         gap: 8px; /* Mobile par gap thoda kam kar diya */
     }
    }
+/* Division Titles - Ye missing tha */
+.div-title { 
+    font-size: 1.2rem; 
+    color: #08fb8f; 
+    margin-bottom: 25px; 
+    letter-spacing: 1.5px; 
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(8, 251, 143, 0.4);
+    z-index: 2;
+    position: relative;
+}
+
+/* Play Button Overlay (Cards pe) - Ye bhi missing tha */
+.play-overlay {
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); 
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; 
+    transition: 0.3s ease;
+    z-index: 2; /* Border ke andar par image ke upar */
+}
+
+.video-card:hover .play-overlay { 
+    opacity: 1; 
+}
+
+.play-overlay span { 
+    font-size: 2.5rem; 
+    color: #08fb8f; 
+    text-shadow: 0 0 15px #08fb8f;
+}
 
 /* =========================================
    VIDEO OVERLAY POP-UP (Blur Background)
