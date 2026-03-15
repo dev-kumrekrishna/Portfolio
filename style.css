@@ -330,43 +330,53 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     z-index: -1;
 }
 
-/* Division Titles (#08fb8f Color & Centered) */
-.edit-division { 
-    margin-bottom: 35px; 
-    text-align: center; 
+/* =========================================
+   EDIT DIVISIONS (Alag-Alag Borders)
+========================================= */
+.edit-division {
+    background: transparent; /* Transparent background */
+    border: 1px solid #08fb8f; /* Teeno ke liye alag border */
+    border-radius: 12px;
+    padding: 25px 20px;
+    margin-bottom: 30px; /* Dabbo ke beech ka gap */
+    text-align: center;
+    box-shadow: 0 0 15px rgba(8, 251, 143, 0.05); /* Halka sa green glow */
 }
-.edit-division:last-child { 
-    margin-bottom: 0; /* Last wale ke neeche extra space nahi chahiye */
+
+.edit-division:last-child {
+    margin-bottom: 0;
 }
 
 .div-title { 
     font-size: 1.1rem; 
     color: #08fb8f; 
-    margin-bottom: 15px; 
+    margin-bottom: 20px; 
     letter-spacing: 1px; 
     font-weight: 600;
 }
 
-/* Strictly 3 Cards Horizontally (3x2, 3x1, 3x1) */
+/* 3 Cards Horizontally */
 .video-grid-small {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Hamesha 3 column banayega */
+    grid-template-columns: repeat(3, 1fr); /* Hamesha 3 columns */
     gap: 12px;
 }
 
-/* Small Video Cards */
+/* Small Video Cards (4:5 Ratio) */
 .video-card {
     position: relative;
     background: rgba(255,255,255,0.03);
-    aspect-ratio: 9/16; 
+    aspect-ratio: 4/5; /* YAHAN 4:5 RATIO SET KIYA HAI */
     border-radius: 6px;
     cursor: pointer;
     overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.6rem; color: #666;
     text-align: center;
+    z-index: 1;
 }
 
+/* Card ka Ghumta Hua Border (Same as before) */
 .video-card::before {
     content: '';
     position: absolute;
@@ -379,6 +389,7 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: rotateBorder 3s linear infinite;
+    z-index: -1;
 }
 
 .video-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -390,3 +401,10 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 }
 .video-card:hover .play-overlay { opacity: 1; }
 .play-overlay span { font-size: 1.5rem; color: #08fb8f; }
+
+/* Mobile View Adjustments (Optional: agar phone par 3 cards bahut chhote lagen toh ise use karein) */
+@media (max-width: 500px) {
+    .video-grid-small { 
+        gap: 8px; /* Mobile par gap thoda kam kar diya */
+    }
+   }
