@@ -98,48 +98,24 @@ nav a.active {
 }
 
 /* =========================================
-   FIXED HORIZONTAL LAYOUT
+   LAYOUT & SECTIONS
 ========================================= */
 .horizontal-container {
-    display: flex;
-    flex-wrap: nowrap; /* Sabko ek line mein rakhega, niche nahi aane dega */
-    width: 100vw;
-    height: 100vh;
-    overflow-x: auto; /* Horizontal scroll enable */
-    overflow-y: hidden; /* Main container ka vertical scroll band */
-    scroll-snap-type: x mandatory; /* Snap effect */
+    display: flex; width: 100vw; height: 100vh;
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
 .section {
-    /* Section ko strict 100% width pe rakhega */
-    flex: 0 0 100vw; 
-    width: 100vw;
-    min-width: 100vw; 
-    
-    height: 100vh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    
-    /* Vertical Scroll Fix */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Content upar se shuru hoga */
-    padding: 120px 20px 120px; /* Header space aur bottom space */
-    overflow-y: auto; /* Section ke andar scroll */
-    position: relative;
+    flex: 0 0 100vw; height: 100vh;
+    scroll-snap-align: start; scroll-snap-stop: always;
+    display: flex; justify-content: center; align-items: center;
+    padding: 100px 20px 20px; overflow-y: auto;
 }
 
-.content-box {
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
-    z-index: 10;
-    margin: 0 auto;
-    padding-bottom: 60px; /* Extra breathing space at bottom */
-}
-
+.content-box { text-align: center; max-width: 800px; width: 100%; z-index: 10; }
 
 /* =========================================
    TYPOGRAPHY (HEADINGS COLOR)
