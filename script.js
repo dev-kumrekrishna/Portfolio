@@ -1,21 +1,12 @@
-// ====== 1. LIGHTWEIGHT RANDOM PARTICLES (PERFORMANCE OPTIMIZED) ======
+// ====== 1. RANDOM PARTICLES (LIGHTWEIGHT) ======
 tsParticles.load("tsparticles", {
     fpsLimit: 60,
     particles: {
-        number: { 
-            value: 80, // Kam count = Better performance
-            density: { enable: true, area: 800 } 
-        },
+        number: { value: 80, density: { enable: true, area: 800 } },
         color: { value: "#08fb8f" },
         shape: { type: "circle" },
-        opacity: {
-            value: 0.5,
-            random: true
-        },
-        size: {
-            value: { min: 1, max: 3 },
-            random: true
-        },
+        opacity: { value: 0.5, random: true },
+        size: { value: { min: 1, max: 3 }, random: true },
         links: {
             enable: true,
             distance: 150,
@@ -27,43 +18,33 @@ tsParticles.load("tsparticles", {
             enable: true,
             speed: 1.5,
             direction: "none",
-            random: false,
-            straight: false,
             outModes: { default: "bounce" }
         }
     },
     interactivity: {
         detectsOn: "canvas",
         events: {
-            onHover: { enable: true, mode: "grab" }, // Mouse/Touch par lines judengi
-            onClick: { enable: true, mode: "push" },
+            onHover: { enable: true, mode: "grab" },
             resize: true
         },
-        modes: {
-            grab: { distance: 200, links: { opacity: 0.6 } },
-            push: { quantity: 4 }
-        }
+        modes: { grab: { distance: 200, links: { opacity: 0.6 } } }
     },
-    background: { color: "transparent" },
-    detectRetina: true
+    background: { color: "transparent" }
 });
 
 
-// ====== 2. AUDIO SETUP (SELECTED SWOOSH) ======
+// ====== 2. SLIDE SOUND LOGIC (SELECTED) ======
 const swooshSoundURL = 'https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3';
 const swooshAudio = new Audio(swooshSoundURL);
-swooshAudio.volume = 1.0; // Volume control
+swooshAudio.volume = 0.3;
 
 function playSwoosh() {
-    swooshAudio.currentTime = 0; // Sound ko har baar shuru se reset karega
-    swooshAudio.play().catch(e => {
-        // Browser autoplay block hone par error silent rahega
-    });
+    swooshAudio.currentTime = 0;
+    swooshAudio.play().catch(e => {});
 }
 
 
-
-// ====== 3. TYPEWRITER EFFECT (WORD WRAPPER) ======
+// ====== 3. TEXT REVEAL & NAVIGATION GLOW ======
 function wrapWords(element) {
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
     const textNodes = [];
@@ -88,11 +69,8 @@ function wrapWords(element) {
     });
 }
 
-// Applying typewriter logic to all major text elements
 document.querySelectorAll('.hero-title, .hero-subtitle, .content-box h2, .content-box p, .card h3, .styled-list li').forEach(el => wrapWords(el));
 
-
-// ====== 4. INTERSECTION OBSERVER (GLOW, SOUND & REVEAL) ======
 const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelectorAll('nav a');
 let isFirstLoad = true;
@@ -104,23 +82,20 @@ const observer = new IntersectionObserver((entries) => {
         const buttons = entry.target.querySelectorAll('.cta, .cta-outline');
 
         if (entry.isIntersecting) {
-            // Play sound only after the first load interaction
+            // Har slide par swoosh play hoga
             if (!isFirstLoad) playSwoosh();
             isFirstLoad = false;
 
-            // Nav Glow
+            // Nav Glow Update
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentId}`) link.classList.add('active');
             });
 
-            // Reveal Words (Staggered Animation)
+            // GSAP Animations
             gsap.to(words, { opacity: 1, y: 0, duration: 0.1, stagger: 0.04 });
-            
-            // Fade-in Buttons
             gsap.fromTo(buttons, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.5 });
         } else {
-            // Reset state when section is out of view
             gsap.set(words, { opacity: 0, y: 10 });
             gsap.set(buttons, { opacity: 0 });
         }
@@ -131,8 +106,7 @@ sections.forEach(section => {
     if (section.getAttribute('id')) observer.observe(section);
 });
 
-
-// ====== 5. HORIZONTAL WHEEL SCROLL SUPPORT ======
+// Horizontal Wheel Scroll Support
 const scrollContainer = document.querySelector('.horizontal-container');
 if (scrollContainer) {
     scrollContainer.addEventListener('wheel', (evt) => {
