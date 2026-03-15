@@ -331,11 +331,11 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 }
 
 /* =========================================
-   EDIT DIVISIONS (Base Update)
+   EDIT DIVISIONS (Container)
 ========================================= */
 .edit-division {
-    position: relative; /* Bahut zaroori - iske bina background bahar nikal jayega */
-    overflow: hidden; /* Blur corners ko round border ke andar rakhega */
+    position: relative; /* YEH SABSE ZAROORI HAI */
+    overflow: hidden; /* Background ko border ke bahar nikalne se rokega */
     background: transparent;
     border: 1px solid #08fb8f; 
     border-radius: 12px;
@@ -345,42 +345,40 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     box-shadow: 0 0 15px rgba(8, 251, 143, 0.05); 
 }
 
-/* Ensure text aur cards background ke upar rahein */
+/* Content ko aage lane ke liye */
 .div-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Text aur cards hamesha upar rahenge */
 }
 
 /* =========================================
-   BACKGROUND VIDEOS (Blur Effect)
+   BACKGROUND VIDEOS & MOTION
 ========================================= */
-.div-bg-video {
-    position: absolute;
-    top: 0; left: 0;
+.div-bg-video, .div-bg-motion {
+    position: absolute; /* Video ko text ke peeche bhejega */
+    top: 0; left: 0; 
     width: 100%; height: 100%;
-    z-index: 0; /* Content ke piche */
-    pointer-events: none; /* User iframe par click na kar paye */
-    filter: blur(12px) brightness(0.25); /* Video ko dhundhla aur dark banata hai */
-    transform: scale(1.1); /* Blur wale edges ko chhupane ke liye halka zoom */
+    z-index: 0; /* Sabse peeche (Border ke andar) */
+    pointer-events: none; /* Ispe click nahi hoga */
+    border-radius: 12px;
 }
 
-/* Iframe ko div ke size se bada karte hain taaki YouTube UI/Black bars na dikhein */
+/* YouTube Iframe Trick (Cover the background) */
 .div-bg-video iframe {
     position: absolute;
     top: 50%; left: 50%;
-    width: 200%; height: 200%; /* Cover effect ke liye */
+    width: 300%; /* Bada size karke UI chhupayega */
+    height: 300%; 
     transform: translate(-50%, -50%);
+    filter: blur(10px) brightness(0.2); /* Video ko blur aur dark karega taaki text dikhe */
+    opacity: 0.8;
 }
 
 /* =========================================
    PURE CSS MOTION GRAPHICS BACKGROUND
 ========================================= */
 .div-bg-motion {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    filter: blur(25px) brightness(0.4);
+    filter: blur(20px) brightness(0.3);
 }
 
 .shape {
@@ -390,30 +388,10 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     animation: floatShape 12s infinite alternate ease-in-out;
 }
 
-/* Neon Green Orb */
-.shape1 {
-    width: 150px; height: 150px;
-    background: #08fb8f;
-    top: -20px; left: -20px;
-}
+.shape1 { width: 150px; height: 150px; background: #08fb8f; top: -10%; left: -10%; }
+.shape2 { width: 200px; height: 200px; background: #0077ff; bottom: -20%; right: 5%; animation-delay: -4s; }
+.shape3 { width: 120px; height: 120px; background: #8e08fb; top: 30%; left: 30%; animation-delay: -8s; }
 
-/* Deep Blue Orb */
-.shape2 {
-    width: 200px; height: 200px;
-    background: #0077ff; 
-    bottom: -50px; right: 5%;
-    animation-delay: -4s; /* Animation thodi alag time pe start hogi */
-}
-
-/* Purple Orb */
-.shape3 {
-    width: 120px; height: 120px;
-    background: #8e08fb; 
-    top: 40%; left: 40%;
-    animation-delay: -8s;
-}
-
-/* Moving Animation */
 @keyframes floatShape {
     0% { transform: translate(0, 0) scale(1); }
     50% { transform: translate(40px, -20px) scale(1.1); }
