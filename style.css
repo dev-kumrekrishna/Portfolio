@@ -108,14 +108,18 @@ nav a.active {
     -webkit-overflow-scrolling: touch;
 }
 
+/* Vertical scroll area badhane ke liye fix */
 .section {
-    flex: 0 0 100vw; height: 100vh;
-    scroll-snap-align: start; scroll-snap-stop: always;
-    display: flex; justify-content: center; align-items: center;
-    padding: 100px 20px 20px; overflow-y: auto;
+    height: 100vh; /* Viewport height fixed rahegi horizontal snap */
+    overflow-y: auto; /* Section ke andar vertical scroll allow */
+    padding-bottom: 100px !important; /* extra space add */
+    align-items: flex-start; 
 }
 
-.content-box { text-align: center; max-width: 800px; width: 100%; z-index: 10; }
+.content-box {
+    padding-top: 40px; 
+    padding-bottom: 60px; 
+}
 
 /* =========================================
    TYPOGRAPHY (HEADINGS COLOR)
