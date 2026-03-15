@@ -394,17 +394,76 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 
 .video-card img { width: 100%; height: 100%; object-fit: cover; }
 
-.play-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
-    opacity: 0; transition: 0.3s;
-}
-.video-card:hover .play-overlay { opacity: 1; }
-.play-overlay span { font-size: 1.5rem; color: #08fb8f; }
-
-/* Mobile View Adjustments (Optional: agar phone par 3 cards bahut chhote lagen toh ise use karein) */
 @media (max-width: 500px) {
     .video-grid-small { 
         gap: 8px; /* Mobile par gap thoda kam kar diya */
     }
    }
+
+/* =========================================
+   VIDEO OVERLAY POP-UP (Blur Background)
+========================================= */
+.modal {
+    display: none; /* Default me chhipa rahega, JS isko flex karega */
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Transparent black */
+    backdrop-filter: blur(15px); /* Piche ka background dhundhla karega */
+    -webkit-backdrop-filter: blur(15px);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 380px; /* Shorts/Reels ke liye best size. Agar long video ho toh isko 800px kar lena */
+    background: #030406;
+    border: 2px solid #08fb8f; /* Neon Green Border */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(8, 251, 143, 0.3);
+    animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy pop-up effect */
+}
+
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: -45px; right: 0;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #08fb8f;
+    transform: scale(1.1);
+}
+
+.iframe-container {
+    position: relative;
+    padding-bottom: 177.77%; /* 9:16 Aspect Ratio (Shorts ke liye ekdam perfect) */
+    height: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
