@@ -101,28 +101,37 @@ nav a.active {
    LAYOUT & SECTIONS
 ========================================= */
 .horizontal-container {
-    display: flex; width: 100vw; height: 100vh;
-    overflow-x: auto; overflow-y: hidden;
+    display: flex; 
+    width: 100vw; 
+    height: 100dvh; /* 100vh ki jagah 100dvh (dynamic viewport) mobile ke liye best hai */
+    overflow-x: auto; 
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
 .section {
-    flex: 0 0 100vw;
-    min-width: 100vw; /* Yeh line sections ko shrink hone se rokegi */
-    flex-shrink: 0; /* Mobile browsers ke liye extra safety */
-    height: 100vh;
+    flex: 0 0 100vw; 
+    min-width: 100vw; /* Shrink hone se rokne ke liye */
+    flex-shrink: 0;
+    height: 100dvh; /* 100dvh use kiya hai */
     scroll-snap-align: start; 
     scroll-snap-stop: always;
     display: flex; 
     justify-content: center; 
-    align-items: center;
-    padding: 100px 20px 20px; 
+    align-items: flex-start; /* 'center' hta diya taaki content humesha top se flow ho */
+    padding: 100px 20px 80px; /* Neeche (bottom) 80px ki padding di hai taaki full scroll ho */
     overflow-y: auto;
 }
 
-.content-box { text-align: center; max-width: 800px; width: 100%; z-index: 10; }
+.content-box { 
+    text-align: center; 
+    max-width: 800px; 
+    width: 100%; 
+    z-index: 10; 
+    margin: auto 0; /* Yeh line chhoti screen me content ko perfectly center rakhegi aur badi screen me scroll allow karegi */
+}
 
 /* =========================================
    TYPOGRAPHY (HEADINGS COLOR)
