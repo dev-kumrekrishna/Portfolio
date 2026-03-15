@@ -155,6 +155,7 @@ nav a.active {
     max-width: 600px; /* Thoda chhota rakha hai taaki block clearly center mein dikhe */
     width: 100%;
     margin: 0 auto; /* Yeh poore block ko utha kar screen ke center mein rakh dega */
+    padding: 0 10px;
     text-align: left; /* Text ekdam left-to-right hi padhne mein aayega */
     z-index: 10;
     flex-shrink: 0;
