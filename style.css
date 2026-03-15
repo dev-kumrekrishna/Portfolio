@@ -100,10 +100,11 @@ nav a.active {
 /* =========================================
    LAYOUT & SECTIONS
 ========================================= */
+/* 1. Container - 100dvh for mobile support */
 .horizontal-container {
     display: flex; 
     width: 100vw; 
-    height: 100dvh; /* 100vh ki jagah 100dvh (dynamic viewport) mobile ke liye best hai */
+    height: 100dvh;
     overflow-x: auto; 
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
@@ -111,35 +112,42 @@ nav a.active {
     -webkit-overflow-scrolling: touch;
 }
 
-/* 1. Section Update */
+/* 2. Section - Flex Column Layout */
 .section {
     flex: 0 0 100vw; 
     min-width: 100vw;
-    height: 100dvh; /* Mobile browser bottom bar support */
+    height: 100dvh; 
+    overflow-y: auto;
     scroll-snap-align: start; 
     scroll-snap-stop: always;
-    overflow-y: auto;
     display: flex; 
-    flex-direction: column; /* Content ko vertically stack karega */
-    padding: 0; /* Padding yaha se hta di gai hai taaki scroll na atke */
+    flex-direction: column; /* Vertically stack karega */
+    padding: 0 20px; /* Top/Bottom padding ab spacers control karenge */
 }
 
-/* 2. Magical Flex Spacers (Yeh chote content ko center rakhenge aur bade ko scroll hone denge) */
-.section::before,
+/* 3. Invisible Spacers - Yeh magic karenge! */
+.section::before {
+    content: '';
+    flex-shrink: 0;
+    height: 110px; /* Header ke theek neeche safe zone (heading yaha se shuru hogi) */
+    margin-top: auto; /* Chhote content ko center push karega */
+}
+
 .section::after {
     content: '';
-    flex: 1 1 auto;
+    flex-shrink: 0;
+    height: 100px; /* Scroll ke baad neeche saans lene ki jagah */
+    margin-bottom: auto; /* Chhote content ko center push karega */
 }
 
-/* 3. Content Box Update */
+/* 4. Content Box */
 .content-box { 
     text-align: center; 
     max-width: 800px; 
     width: 100%; 
     z-index: 10; 
-    flex-shrink: 0; /* Important: Yeh content ko dabne (squish) se rokega */
-    margin: 0 auto; 
-    padding: 120px 20px 80px; /* 120px upar header ke liye, 80px neeche aaram se scroll ke liye */
+    flex-shrink: 0; /* Content ko dabne (shrink hone) se rokega */
+    margin: 0 auto; /* Horizontally center rakhega */
 }
 
 /* =========================================
