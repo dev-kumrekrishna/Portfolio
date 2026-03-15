@@ -98,33 +98,37 @@ nav a.active {
 }
 
 /* =========================================
-   LAYOUT & SECTIONS
+   FIXED HORIZONTAL LAYOUT
 ========================================= */
 .horizontal-container {
-    display: flex; width: 100vw; height: 100vh;
-    overflow-x: auto; overflow-y: hidden;
-    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-wrap: nowrap; /* Sabko ek line mein rakhega, niche nahi aane dega */
+    width: 100vw;
+    height: 100vh;
+    overflow-x: auto; /* Horizontal scroll enable */
+    overflow-y: hidden; /* Main container ka vertical scroll band */
+    scroll-snap-type: x mandatory; /* Snap effect */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 }
 
-/* =========================================
-   VERTICAL SCROLL FIX (Full Update)
-========================================= */
 .section {
-    flex: 0 0 100vw;
+    /* Section ko strict 100% width pe rakhega */
+    flex: 0 0 100vw; 
+    width: 100vw;
+    min-width: 100vw; 
+    
     height: 100vh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    
+    /* Vertical Scroll Fix */
     display: flex;
     justify-content: center;
-    /* Isse content hamesha upar se shuru hoga taki cut na ho */
-    align-items: flex-start; 
-    /* 120px top padding header ke liye, 100px bottom extra space ke liye */
-    padding: 120px 20px 100px; 
-    /* Section ke andar vertical scroll enable */
-    overflow-y: auto; 
-    -webkit-overflow-scrolling: touch; /* Mobile smooth scrolling fix */
+    align-items: flex-start; /* Content upar se shuru hoga */
+    padding: 120px 20px 120px; /* Header space aur bottom space */
+    overflow-y: auto; /* Section ke andar scroll */
+    position: relative;
 }
 
 .content-box {
@@ -132,19 +136,8 @@ nav a.active {
     max-width: 800px;
     width: 100%;
     z-index: 10;
-    /* Content ko horizontal center rakhne ke liye */
-    margin: 0 auto; 
-    /* Taki cards ya text ek dum bottom edge se na chipkein */
-    padding-bottom: 50px; 
-}
-
-/* Scrollbar ko thoda zyada visible banane ke liye (Optional) */
-.section::-webkit-scrollbar {
-    width: 4px;
-}
-.section::-webkit-scrollbar-thumb {
-    background: rgba(8, 251, 143, 0.5);
-    border-radius: 10px;
+    margin: 0 auto;
+    padding-bottom: 60px; /* Extra breathing space at bottom */
 }
 
 
