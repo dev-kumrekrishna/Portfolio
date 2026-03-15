@@ -52,12 +52,15 @@ tsParticles.load("tsparticles", {
 // ====== 2. AUDIO SETUP (SELECTED SWOOSH) ======
 const swooshSoundURL = 'https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3';
 const swooshAudio = new Audio(swooshSoundURL);
-swooshAudio.volume = 0.3;
+swooshAudio.volume = 1.0; // Volume control
 
 function playSwoosh() {
-    swooshAudio.currentTime = 0;
-    swooshAudio.play().catch(e => { /* Autoplay restriction handle */ });
+    swooshAudio.currentTime = 0; // Sound ko har baar shuru se reset karega
+    swooshAudio.play().catch(e => {
+        // Browser autoplay block hone par error silent rahega
+    });
 }
+
 
 
 // ====== 3. TYPEWRITER EFFECT (WORD WRAPPER) ======
