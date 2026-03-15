@@ -331,28 +331,93 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 }
 
 /* =========================================
-   EDIT DIVISIONS (Alag-Alag Borders)
+   EDIT DIVISIONS (Base Update)
 ========================================= */
 .edit-division {
-    background: transparent; /* Transparent background */
-    border: 1px solid #08fb8f; /* Teeno ke liye alag border */
+    position: relative; /* Bahut zaroori - iske bina background bahar nikal jayega */
+    overflow: hidden; /* Blur corners ko round border ke andar rakhega */
+    background: transparent;
+    border: 1px solid #08fb8f; 
     border-radius: 12px;
     padding: 25px 20px;
-    margin-bottom: 30px; /* Dabbo ke beech ka gap */
+    margin-bottom: 30px; 
     text-align: center;
-    box-shadow: 0 0 15px rgba(8, 251, 143, 0.05); /* Halka sa green glow */
+    box-shadow: 0 0 15px rgba(8, 251, 143, 0.05); 
 }
 
-.edit-division:last-child {
-    margin-bottom: 0;
+/* Ensure text aur cards background ke upar rahein */
+.div-content {
+    position: relative;
+    z-index: 2;
 }
 
-.div-title { 
-    font-size: 1.1rem; 
-    color: #08fb8f; 
-    margin-bottom: 20px; 
-    letter-spacing: 1px; 
-    font-weight: 600;
+/* =========================================
+   BACKGROUND VIDEOS (Blur Effect)
+========================================= */
+.div-bg-video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0; /* Content ke piche */
+    pointer-events: none; /* User iframe par click na kar paye */
+    filter: blur(12px) brightness(0.25); /* Video ko dhundhla aur dark banata hai */
+    transform: scale(1.1); /* Blur wale edges ko chhupane ke liye halka zoom */
+}
+
+/* Iframe ko div ke size se bada karte hain taaki YouTube UI/Black bars na dikhein */
+.div-bg-video iframe {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 200%; height: 200%; /* Cover effect ke liye */
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================
+   PURE CSS MOTION GRAPHICS BACKGROUND
+========================================= */
+.div-bg-motion {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    filter: blur(25px) brightness(0.4);
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatShape 12s infinite alternate ease-in-out;
+}
+
+/* Neon Green Orb */
+.shape1 {
+    width: 150px; height: 150px;
+    background: #08fb8f;
+    top: -20px; left: -20px;
+}
+
+/* Deep Blue Orb */
+.shape2 {
+    width: 200px; height: 200px;
+    background: #0077ff; 
+    bottom: -50px; right: 5%;
+    animation-delay: -4s; /* Animation thodi alag time pe start hogi */
+}
+
+/* Purple Orb */
+.shape3 {
+    width: 120px; height: 120px;
+    background: #8e08fb; 
+    top: 40%; left: 40%;
+    animation-delay: -8s;
+}
+
+/* Moving Animation */
+@keyframes floatShape {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, -20px) scale(1.1); }
+    100% { transform: translate(-30px, 40px) scale(0.9); }
 }
 
 /* 3 Cards Horizontally */
