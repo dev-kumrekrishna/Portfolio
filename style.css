@@ -141,14 +141,13 @@ nav a.active {
 }
 
 /* 4. Content Box */
-.content-box { 
+.content-box, .hero-content { 
     text-align: center; 
     max-width: 800px; 
     width: 100%; 
     z-index: 10; 
-    flex-shrink: 0; /* Content ko dabne (shrink hone) se rokega */
-    margin: 0 auto; /* Horizontally center rakhega */
-}
+    flex-shrink: 0; 
+    margin: 0 auto;
 
 /* =========================================
    TYPOGRAPHY (HEADINGS COLOR)
