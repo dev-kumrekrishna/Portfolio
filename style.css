@@ -111,26 +111,35 @@ nav a.active {
     -webkit-overflow-scrolling: touch;
 }
 
+/* 1. Section Update */
 .section {
     flex: 0 0 100vw; 
-    min-width: 100vw; /* Shrink hone se rokne ke liye */
-    flex-shrink: 0;
-    height: 100dvh; /* 100dvh use kiya hai */
+    min-width: 100vw;
+    height: 100dvh; /* Mobile browser bottom bar support */
     scroll-snap-align: start; 
     scroll-snap-stop: always;
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-start; /* 'center' hta diya taaki content humesha top se flow ho */
-    padding: 100px 20px 80px; /* Neeche (bottom) 80px ki padding di hai taaki full scroll ho */
     overflow-y: auto;
+    display: flex; 
+    flex-direction: column; /* Content ko vertically stack karega */
+    padding: 0; /* Padding yaha se hta di gai hai taaki scroll na atke */
 }
 
+/* 2. Magical Flex Spacers (Yeh chote content ko center rakhenge aur bade ko scroll hone denge) */
+.section::before,
+.section::after {
+    content: '';
+    flex: 1 1 auto;
+}
+
+/* 3. Content Box Update */
 .content-box { 
     text-align: center; 
     max-width: 800px; 
     width: 100%; 
     z-index: 10; 
-    margin: auto 0; /* Yeh line chhoti screen me content ko perfectly center rakhegi aur badi screen me scroll allow karegi */
+    flex-shrink: 0; /* Important: Yeh content ko dabne (squish) se rokega */
+    margin: 0 auto; 
+    padding: 120px 20px 80px; /* 120px upar header ke liye, 80px neeche aaram se scroll ke liye */
 }
 
 /* =========================================
