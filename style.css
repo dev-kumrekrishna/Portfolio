@@ -301,3 +301,23 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     header h2 { font-size: 1.1rem; }
     nav a { font-size: 0.85rem; }
 }
+
+/* VIDEO PLAYER*/
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.video-box {
+    background: #000;
+    border: 1px solid rgba(8, 251, 143, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+@media (max-width: 600px) {
+    .video-grid { grid-template-columns: 1fr; }
+}
