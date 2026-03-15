@@ -59,25 +59,55 @@
                 </div>
                 
             </div>
-            <div class="video-grid">
-    <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/4eKTUg3dbYc" 
-                title="Levi Ackerman Edit" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
+            <div class="content-box">
+        <h2>Edits</h2>
 
-    <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/vxC7tQR7Qgo" 
-                title="Gaming Edit" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
+        <div class="edit-division">
+            <h3 class="div-title">SHORT / REEL EDITS</h3>
+            <div class="video-grid-small">
+                <div class="video-card" onclick="openModal('4eKTUg3dbYc')">
+                    <img src="https://img.youtube.com/vi/4eKTUg3dbYc/mqdefault.jpg" alt="Levi Edit">
+                    <div class="play-overlay"><span>▶</span></div>
+                </div>
+                <div class="video-card" onclick="openModal('vxC7tQR7Qgo')">
+                    <img src="https://img.youtube.com/vi/vxC7tQR7Qgo/mqdefault.jpg" alt="Gaming Edit">
+                    <div class="play-overlay"><span>▶</span></div>
+                </div>
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
             </div>
+        </div>
+
+        <div class="edit-division">
+            <h3 class="div-title">MOTION GRAPHICS</h3>
+            <div class="video-grid-small three-col">
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+            </div>
+        </div>
+
+        <div class="edit-division">
+            <h3 class="div-title">LONG VIDEOS</h3>
+            <div class="video-grid-small three-col">
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+                <div class="video-card"><span>Coming Soon</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="videoModal" class="modal" onclick="closeModal()">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="iframe-container">
+            <iframe id="modalIframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
         </section>
 
         <section id="web" class="section">
