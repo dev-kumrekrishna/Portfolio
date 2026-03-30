@@ -135,7 +135,7 @@ function closeModal() {
 }
 
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js")
+    navigator.serviceWorker.register("/Portfolio/service-worker.js")
     .then(() => console.log("PWA Ready 🚀"))
     .catch(err => console.log("SW error:", err));
 }
