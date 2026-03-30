@@ -1,7 +1,7 @@
 {
   "name": "Krishna Kumre Portfolio",
   "short_name": "Krishna",
-  "start_url": "/Portfolio/index.html"
+  "start_url": "/Portfolio/index.html",
   "display": "standalone",
   "background_color": "#030406",
   "theme_color": "#08fb8f",
@@ -10,13 +10,13 @@
     {
       "src": "https://dev-kumrekrishna.github.io/assets/logos/mine-portfolio.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
       "src": "https://dev-kumrekrishna.github.io/assets/logos/mine-portfolio.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
