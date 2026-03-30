@@ -1,10 +1,10 @@
-const CACHE_NAME = "krishna-portfolio-v3";
+const CACHE_NAME = "krishna-portfolio-v4";
 
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/script.js"
+  "/Portfolio/",
+  "/Portfolio/index.html",
+  "/Portfolio/style.css",
+  "/Portfolio/script.js"
 ];
 
 self.addEventListener("install", event => {
