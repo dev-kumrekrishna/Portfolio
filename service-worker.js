@@ -1,4 +1,4 @@
-const CACHE_NAME = "krishna-portfolio-v4";
+const CACHE_NAME = "krishna-portfolio-v5";
 
 const urlsToCache = [
   "/Portfolio/",
