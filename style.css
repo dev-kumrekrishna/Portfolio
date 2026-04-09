@@ -545,4 +545,17 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     top: 0; left: 0;
     width: 100%; height: 100%;
     border: none;
+} 
+
+/* Global smooth scrolling enable karne ke liye */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Desktop screens (min-width: 768px) ke liye scroll fix */
+@media (min-width: 768px) {
+    body, .main-container {
+        overflow-y: auto; 
+        
+    }
 }
