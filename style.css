@@ -559,3 +559,34 @@ html {
         
     }
 }
+
+/* Default: Mobile arrows hide */
+.nav-arrow {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#prevBtn { left: 20px; }
+#nextBtn { right: 20px; }
+
+/* PC/Laptop arrows show */
+@media (min-width: 768px) {
+    .nav-arrow {
+        display: block; 
+    }
+}
