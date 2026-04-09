@@ -141,3 +141,23 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("PWA Ready 🚀"))
     .catch(err => console.log("SW error:", err));
 }
+document.addEventListener("DOMContentLoaded", function() {
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+
+    // '>' button par click karne se ek screen neeche jayega
+    nextBtn.addEventListener('click', () => {
+        window.scrollBy({ 
+            top: window.innerHeight, 
+            behavior: 'smooth' 
+        });
+    });
+
+    // '<' button par click karne se ek screen upar jayega
+    prevBtn.addEventListener('click', () => {
+        window.scrollBy({ 
+            top: -window.innerHeight, 
+            behavior: 'smooth' 
+        });
+    });
+});
