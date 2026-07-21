@@ -122,34 +122,35 @@ if (scrollContainer) {
 
 function openModal(videoPath){
 
-const modal=document.getElementById("videoModal");
+    const modal=document.getElementById("videoModal");
+    const video=document.getElementById("modalVideo");
 
-const video=document.getElementById("modalVideo");
+    video.src=videoPath;
+    video.load();
 
-video.src=videoPath;
+    modal.style.display="flex";
 
-video.load();
+    video.onloadedmetadata=function(){
 
-video.play();
+        video.style.width="auto";
+        video.style.height="auto";
 
-modal.style.display="flex";
+        video.play();
+
+    };
 
 }
 
 function closeModal(){
 
-const modal=document.getElementById("videoModal");
+    const modal = document.getElementById("videoModal");
+    const video = document.getElementById("modalVideo");
 
-const video=document.getElementById("modalVideo");
+    video.pause();
+    video.currentTime = 0;
+    video.src = "";
 
-video.pause();
-
-video.currentTime=0;
-
-video.src="";
-
-modal.style.display="none";
-
+    modal.style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", function() {

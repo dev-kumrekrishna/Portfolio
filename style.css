@@ -352,8 +352,17 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 }
 
 /* =========================================
-   BACKGROUND
+   BACKGROUND VIDEOS & MOTION
 ========================================= */
+.div-bg-video, .div-bg-motion {
+    position: absolute; /* Video ko text ke peeche bhejega */
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    z-index: 0; /* Sabse peeche (Border ke andar) */
+    pointer-events: none; /* Ispe click nahi hoga */
+    border-radius: 12px;
+}
+
 .edit-division{
     position:relative;
     overflow:hidden;
@@ -369,12 +378,22 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:.5;   /* Optional */
+    opacity:.35;   /* Optional */
 }
 
 .div-content{
     position:relative;
     z-index:2;
+}
+
+.video-grid-long{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.video-grid-long .video-card{
+    aspect-ratio:16/9;
 }
 
 /* =========================================
@@ -535,20 +554,24 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     transform: scale(1.1);
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 177.77%; /* 9:16 Aspect Ratio (Shorts ke liye ekdam perfect) */
-    height: 0;
-    border-radius: 10px;
-    overflow: hidden;
+.video-container{
+    width:min(90vw,900px);
+    max-height:85vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.video-container video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    border: none;
-} 
+#modalVideo{
+    max-width:100%;
+    max-height:85vh;
+
+    width:auto;
+    height:auto;
+
+    display:block;
+}
 
 /* Global smooth scrolling enable karne ke liye */
 html {
@@ -592,14 +615,4 @@ html {
     .nav-arrow {
         display: block; 
     }
-}
-
-.video-grid-long{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.video-grid-long .video-card{
-    aspect-ratio:16/9;
 }

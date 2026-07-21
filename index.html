@@ -116,7 +116,7 @@
 
 <div class="video-grid-long">
 
-<div class="video-card" onclick="openModal('assets/videos/long1.mp4')">
+<div class="video-card" onclick="openModal('assets/videos/long1.mp4','long')">
 <img src="assets/thumbnails/long1.jpg">
 <div class="play-overlay"><span>▶</span></div>
 </div>
@@ -133,29 +133,13 @@
 </div>
 
 <div id="videoModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
 
-<div class="modal-content">
-
-<span class="close-btn">&times;</span>
-
-<div class="iframe-container">
-
-<video id="modalVideo" controls autoplay></video>
-
-</div>
-
-</div>
-
-</div>
-        
-</section>
-
-<div id="videoModal" class="modal" onclick="closeModal()">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
         <div class="video-container">
-            <video id="modalVideo"></video>
+            <video id="modalVideo" controls></video>
         </div>
+
     </div>
 </div>
         </section>
