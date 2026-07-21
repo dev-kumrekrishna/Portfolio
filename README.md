@@ -1,83 +1,97 @@
-# Krishna Kumre – Portfolio Website
+# 🌐 Krishna Kumre — Portfolio
 
-This repository contains the source code for my personal portfolio website.
+A modern personal portfolio showcasing my work as a **Video Editor** and **Website Developer**.
 
-The portfolio is designed to present my work as a **Video Editor and Website Developer**, showcasing my creative skills, digital projects, and professional information.
-
-The goal of this portfolio is to provide a clean and engaging introduction for clients, collaborators, and anyone interested in my work.
+This website represents my creative journey, projects, and skills while providing an easy way for clients and collaborators to explore my work.
 
 ---
 
-## About The Portfolio
+## ✨ Features
 
-This website introduces my work and skills in:
-
-• Video Editing  
-• Website Development  
-• Creative Digital Work
-
-It highlights my experience in creating engaging video content and building modern websites with a focus on clean design and user experience.
+- 🎬 Video Editing Showcase
+- 💻 Website Development Projects
+- 📱 Responsive Design
+- 🎨 Modern Cyberpunk UI
+- ⚡ Smooth Animations
+- 📂 Local Video Preview System
+- 📞 Contact & Social Links
 
 ---
 
-## Video Editing
+# 🎬 Video Editing
 
-My editing work focuses on storytelling, pacing, and visual engagement.
+I create engaging content focused on storytelling, smooth pacing, and audience retention.
 
-Services include:
+### Services
 
-- Reels & Shorts Editing (Instagram / YouTube Shorts)
+- Reels & Shorts Editing
 - YouTube Video Editing
-- Cinematic Cuts & Smooth Transitions
-- Color Grading & Beat Synchronization
+- Cinematic Editing
+- Motion Graphics
+- Beat Synchronization
+- Color Grading
 
-Editing Work:
+### View My Work
 
-YouTube  
+**YouTube**  
 https://m.youtube.com/@rayen_editx
 
-Instagram  
-https://www.instagram.com/rayen.editx/
+**Instagram**  
+https://www.instagram.com/pro.krishh11/
 
 ---
 
-## Website Development
+# 💻 Website Development
 
-Alongside video editing, I am continuously learning and building projects in web development.
+I'm continuously improving my web development skills by creating practical and modern projects.
 
-What I work on:
+### What I Build
 
+- Portfolio Websites
+- Business Websites
 - Static & Basic Dynamic Websites
-- Portfolio & Business Websites
-- Admin & User Panel Concepts
-- Basic Authentication & Database Integration
+- Admin Dashboard Concepts
+- Authentication Systems
 
-Technologies used in this portfolio:
+### Technologies
 
-HTML  
-CSS  
-JavaScript
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages
 
 ---
 
-## Purpose of This Project
+# 🎯 Purpose
 
-This portfolio website is created to:
+This project was built to:
 
-- Present my skills professionally
 - Showcase my creative work
-- Provide an easy way for clients to contact me
-- Document my progress as a digital creator
+- Present my skills professionally
+- Connect with potential clients
+- Document my learning journey
+- Build a strong personal brand
 
 ---
 
-## Contact
+# 📬 Contact
 
-Email  
-kumrekrishna02@gmail.com
+📧 **Email**  
+**kumrekrishna02@gmail.com**
 
-Instagram  
+📷 **Instagram**  
 https://www.instagram.com/kumre_krishna_11/
 
-GitHub  
+💻 **GitHub**  
 https://github.com/dev-kumrekrishna
+
+---
+
+# ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
+It motivates me to continue building and improving my work.
+
+---
+
+© 2026 Krishna Kumre
