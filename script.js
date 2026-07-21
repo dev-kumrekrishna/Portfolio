@@ -120,27 +120,38 @@ if (scrollContainer) {
     });
 }
 
-function openModal(videoId) {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalIframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    modal.style.display = 'flex';
+function openModal(videoPath){
+
+const modal=document.getElementById("videoModal");
+
+const video=document.getElementById("modalVideo");
+
+video.src=videoPath;
+
+video.load();
+
+video.play();
+
+modal.style.display="flex";
+
 }
 
-function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const iframe = document.getElementById('modalIframe');
-    iframe.src = ''; // Video stop karne ke liye
-    modal.style.display = 'none';
+function closeModal(){
+
+const modal=document.getElementById("videoModal");
+
+const video=document.getElementById("modalVideo");
+
+video.pause();
+
+video.currentTime=0;
+
+video.src="";
+
+modal.style.display="none";
+
 }
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/Portfolio/service-worker.js", {
-  scope: "/Portfolio/"
-})
-    .then(() => console.log("PWA Ready 🚀"))
-    .catch(err => console.log("SW error:", err));
-}
 document.addEventListener("DOMContentLoaded", function() {
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');

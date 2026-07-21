@@ -352,26 +352,29 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
 }
 
 /* =========================================
-   BACKGROUND VIDEOS & MOTION
+   BACKGROUND
 ========================================= */
-.div-bg-video, .div-bg-motion {
-    position: absolute; /* Video ko text ke peeche bhejega */
-    top: 0; left: 0; 
-    width: 100%; height: 100%;
-    z-index: 0; /* Sabse peeche (Border ke andar) */
-    pointer-events: none; /* Ispe click nahi hoga */
-    border-radius: 12px;
+.edit-division{
+    position:relative;
+    overflow:hidden;
 }
 
-/* YouTube Iframe Trick (Cover the background) */
-.div-bg-video iframe {
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 300%; /* Bada size karke UI chhupayega */
-    height: 300%; 
-    transform: translate(-50%, -50%);
-    filter: blur(10px) brightness(0.2); /* Video ko blur aur dark karega taaki text dikhe */
-    opacity: 0.8;
+.reels-section-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
+
+.reels-section-bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.5;   /* Optional */
+}
+
+.div-content{
+    position:relative;
+    z-index:2;
 }
 
 /* =========================================
@@ -532,7 +535,7 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     transform: scale(1.1);
 }
 
-.iframe-container {
+.video-container {
     position: relative;
     padding-bottom: 177.77%; /* 9:16 Aspect Ratio (Shorts ke liye ekdam perfect) */
     height: 0;
@@ -540,7 +543,7 @@ footer { margin-top: 50px; font-size: 0.85rem; color: #8892b0; letter-spacing: 1
     overflow: hidden;
 }
 
-.iframe-container iframe {
+.video-container video {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -589,4 +592,14 @@ html {
     .nav-arrow {
         display: block; 
     }
+}
+
+.video-grid-long{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.video-grid-long .video-card{
+    aspect-ratio:16/9;
 }
