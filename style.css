@@ -616,3 +616,42 @@ html {
         display: block; 
     }
 }
+
+
+.art-grid{
+    column-count:2;
+    column-gap:18px;
+}
+
+.art-card{
+    border:2px solid #08fb8f;
+    border-radius:18px;
+    overflow:hidden;
+    background:#0a0a0a;
+    break-inside:avoid;
+    margin-bottom:18px;
+}
+
+.art-card img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.art-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 0 20px rgba(8,251,143,.35);
+}
+
+.art-card span{
+    color:#888;
+    font-size:18px;
+}
+
+.gallery-title{
+    margin:35px 0 18px;
+    color:#08fb8f;
+    font-size:1.5rem;
+    text-align:center;
+    letter-spacing:1px;
+}
