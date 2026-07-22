@@ -1,26 +1,28 @@
 # 🌐 Krishna Kumre — Portfolio
 
-A modern personal portfolio showcasing my work as a **Video Editor** and **Website Developer**.
+A modern personal portfolio showcasing my work as a **Video Editor**, **Digital Artist**, and **Website Developer**.
 
-This website represents my creative journey, projects, and skills while providing an easy way for clients and collaborators to explore my work.
+This website represents my creative journey, projects, and skills while providing clients, collaborators, and visitors with a simple way to explore my work and connect with me.
 
 ---
 
 ## ✨ Features
 
 - 🎬 Video Editing Showcase
+- 🎨 Digital Arts & Designs Gallery
+- 👕 Clothing Mockups
 - 💻 Website Development Projects
-- 📱 Responsive Design
-- 🎨 Modern Cyberpunk UI
+- 📱 Fully Responsive Design
 - ⚡ Smooth Animations
 - 📂 Local Video Preview System
+- 🌌 Modern Cyberpunk UI
 - 📞 Contact & Social Links
 
 ---
 
 # 🎬 Video Editing
 
-I create engaging content focused on storytelling, smooth pacing, and audience retention.
+I create engaging videos focused on storytelling, smooth pacing, and audience retention across modern digital platforms.
 
 ### Services
 
@@ -31,26 +33,34 @@ I create engaging content focused on storytelling, smooth pacing, and audience r
 - Beat Synchronization
 - Color Grading
 
-### View My Work
+---
 
-**YouTube**  
-https://m.youtube.com/@rayen_editx
+# 🎨 Digital Arts & Designs
 
-**Instagram**  
-https://www.instagram.com/pro.krishh11/
+I create modern digital artwork with a focus on branding, typography, apparel graphics, and visual identity.
+
+### What I Create
+
+- Poster Designs
+- Typography Art
+- Clothing Mockups
+- T-Shirt Graphics
+- Laptop Skin Designs
+- Brand Identity Concepts
+- Social Media Creatives
 
 ---
 
 # 💻 Website Development
 
-I'm continuously improving my web development skills by creating practical and modern projects.
+Alongside my creative work, I continuously improve my web development skills by building responsive and practical web experiences.
 
 ### What I Build
 
 - Portfolio Websites
 - Business Websites
 - Static & Basic Dynamic Websites
-- Admin Dashboard Concepts
+- Admin & User Dashboard Concepts
 - Authentication Systems
 
 ### Technologies
@@ -64,13 +74,34 @@ I'm continuously improving my web development skills by creating practical and m
 
 # 🎯 Purpose
 
-This project was built to:
+This portfolio was created to:
 
 - Showcase my creative work
 - Present my skills professionally
-- Connect with potential clients
+- Connect with clients and collaborators
 - Document my learning journey
 - Build a strong personal brand
+
+---
+
+# 🛠️ Tools I Use
+
+### Video Editing
+
+- CapCut
+- Alight Motion
+
+### Design
+
+- Inkscape
+
+### Web Development
+
+- HTML5
+- CSS3
+- JavaScript
+- GitHub
+- GitHub Pages
 
 ---
 
@@ -79,8 +110,11 @@ This project was built to:
 📧 **Email**  
 **kumrekrishna02@gmail.com**
 
-📷 **Instagram**  
-https://www.instagram.com/kumre_krishna_11/
+📷 **Instagram (Creative Portfolio)**  
+https://www.instagram.com/pro.krishh11/
+
+🎥 **YouTube**  
+https://m.youtube.com/@rayen_editx
 
 💻 **GitHub**  
 https://github.com/dev-kumrekrishna
@@ -89,9 +123,12 @@ https://github.com/dev-kumrekrishna
 
 # ⭐ Support
 
-If you like this project, consider giving it a ⭐ on GitHub.
-It motivates me to continue building and improving my work.
+If you enjoy this project, consider giving it a ⭐ on GitHub.
+
+Your support motivates me to continue learning, creating, and building better digital experiences.
 
 ---
+
+> **"Every design tells a story. Every project builds an identity."**
 
 © 2026 Krishna Kumre
